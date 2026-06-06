@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AgriGuide Pro – AI-powered crop diagnosis, weather forecasts, and mandi pricing for modern farmers." />
+  <meta name="theme-color" content="#1A3325" />
+  <title>AgriGuide Pro – Smart Farming, Powered by AI</title>
+
+  <!-- Open Graph / LinkedIn preview -->
+  <meta property="og:title" content="AgriGuide Pro – Smart Farming, Powered by AI" />
+  <meta property="og:description" content="Diagnose crop diseases, check real-time mandi prices, and get AI weather advice. Built for India's 140 million farmers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=630&fit=crop" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     LANDING PAGE (shown before login)
+══════════════════════════════════════════ -->
+<div id="landingPage">
+  <nav class="landing-nav">
+    <div class="nav-brand">
+      <div class="nav-logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12"/>
+          <path d="M12 6v6l4 2"/>
+          <path d="M2 2l4 4"/>
+        </svg>
+      </div>
+      <span>AgriGuide Pro</span>
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <button class="btn btn-outline-white btn-sm" onclick="showPage('loginPage')">Sign In</button>
+      <button class="btn btn-gold btn-sm" onclick="showPage('loginPage')">Get Started Free</button>
+    </div>
+  </nav>
+
+  <section class="hero-section">
+    <div class="hero-grain"></div>
+    <div class="hero-content">
+      <div class="hero-badge-pill">🌾 Trusted by 50,000+ Farmers Across India</div>
+      <h1 class="hero-headline">
+        Every Farmer Deserves<br/>
+        <em>Intelligent Guidance</em>
+      </h1>
+      <p class="hero-sub">
+        Diagnose crop diseases with AI, get real-time mandi prices, forecast weather impacts, 
+        and chat with your personal agronomy assistant — all in one place.
+      </p>
+      <div class="hero-cta-group">
+        <button class="btn btn-gold btn-lg" onclick="showPage('loginPage')">
+          Start for Free — No Card Needed
+        </button>
+        <button class="btn btn-outline-white btn-lg" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
+          See How It Works ↓
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><strong>50K+</strong><span>Farmers</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><strong>200K+</strong><span>Crops Scanned</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><strong>96%</strong><span>Accuracy</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><strong>Free</strong><span>Forever</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mockup-card">
+        <div class="mockup-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        </div>
+        <div class="mockup-content">
+          <div class="mockup-scan-result">
+            <div class="scan-icon">🔬</div>
+            <div>
+              <strong>Leaf Blight Detected</strong>
+              <p>Severity: Moderate · Confidence: 94%</p>
+            </div>
+          </div>
+          <div class="mockup-tag green">✓ Treatment plan ready</div>
+          <div class="mockup-weather">
+            <span>🌤 Pune — 28°C</span>
+            <span class="tag-sm">Good sowing conditions</span>
+          </div>
+          <div class="mockup-price-row">
+            <span>🌾 Rice</span><span class="up">₹2,340 ↑7.2%</span>
+          </div>
+          <div class="mockup-price-row">
+            <span>🌽 Maize</span><span class="up">₹2,105 ↑0.7%</span>
+          </div>
+          <div class="mockup-price-row">
+            <span>🌱 Wheat</span><span class="down">₹2,190 ↓3.7%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="features">
+    <p class="section-eyebrow">Everything You Need</p>
+    <h2 class="section-title">Built for the Modern Farmer</h2>
+    <div class="features-grid-landing">
+      <div class="feat-block">
+        <div class="feat-block-icon">📸</div>
+        <h3>AI Crop Scanner</h3>
+        <p>Upload a photo and get instant diagnosis — disease, deficiency, or pest — with treatment recommendations.</p>
+      </div>
+      <div class="feat-block featured">
+        <div class="feat-block-icon">🤖</div>
+        <h3>AI Agronomy Chat</h3>
+        <p>Ask anything. Your 24/7 agricultural expert answers questions about soil, irrigation, pesticides, and more.</p>
+        <div class="feat-block-badge">Most Popular</div>
+      </div>
+      <div class="feat-block">
+        <div class="feat-block-icon">📊</div>
+        <h3>Live Mandi Prices</h3>
+        <p>Real-time wholesale market prices from APMCs across India. Know when to sell, when to wait.</p>
+      </div>
+      <div class="feat-block">
+        <div class="feat-block-icon">🌦</div>
+        <h3>Farm Weather AI</h3>
+        <p>Not just weather — AI analysis of how today's forecast impacts your crops, irrigation, and spray schedule.</p>
+      </div>
+      <div class="feat-block">
+        <div class="feat-block-icon">🌱</div>
+        <h3>Crop Registry</h3>
+        <p>Track all your crops, pricing, and scan history. Your digital farming logbook, always accessible.</p>
+      </div>
+      <div class="feat-block">
+        <div class="feat-block-icon">🗣</div>
+        <h3>5 Regional Languages</h3>
+        <p>English, Hindi, Marathi, Gujarati, Punjabi. Because every farmer deserves guidance in their own language.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-section" id="how">
+    <p class="section-eyebrow">Get Started in Minutes</p>
+    <h2 class="section-title">How AgriGuide Pro Works</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">01</div>
+        <h3>Create Free Account</h3>
+        <p>Sign up with Google or email. No credit card required. Free forever.</p>
+      </div>
+      <div class="how-arrow">→</div>
+      <div class="how-step">
+        <div class="step-num">02</div>
+        <h3>Scan or Chat</h3>
+        <p>Upload a crop photo or ask the AI assistant your farming question.</p>
+      </div>
+      <div class="how-arrow">→</div>
+      <div class="how-step">
+        <div class="step-num">03</div>
+        <h3>Get AI Guidance</h3>
+        <p>Receive expert-level diagnosis, treatment plans, and actionable advice instantly.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <button class="btn btn-gold btn-lg" onclick="showPage('loginPage')">Start Your Free Account →</button>
+    </div>
+  </section>
+
+  <footer class="landing-footer">
+    <div class="footer-brand">
+      <div class="nav-logo">🌾</div>
+      <span>AgriGuide Pro</span>
+    </div>
+    <p>Built with ❤️ for India's farmers · Free, forever.</p>
+    <p style="margin-top:8px;font-size:0.75rem;opacity:0.5;">© 2025 AgriGuide Pro · Open Source on GitHub</p>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     LOGIN / SIGNUP PAGE
+══════════════════════════════════════════ -->
+<div id="loginPage" class="hidden">
+  <div class="auth-layout">
+    <div class="auth-left">
+      <button class="back-to-landing" onclick="showPage('landingPage')">← Back to home</button>
+      <div class="auth-left-content">
+        <div class="auth-logo">🌾</div>
+        <h2>AgriGuide Pro</h2>
+        <p>AI-powered farming guidance for modern agriculture</p>
+        <div class="auth-testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"AgriGuide saved my entire cotton crop. The AI detected fungal blight before I even noticed it."</p>
+          <div class="testimonial-author">— Ramesh Patel, Farmer, Gujarat</div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-right">
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')">Sign In</button>
+          <button class="auth-tab" id="tabSignup" onclick="switchAuthTab('signup')">Create Account</button>
+        </div>
+
+        <!-- Login form -->
+        <div id="formLogin">
+          <button class="btn btn-google btn-wide" onclick="googleLogin()">
+            <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 01-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z"/></svg>
+            Continue with Google
+          </button>
+          <div class="auth-divider"><span>or</span></div>
+          <div class="field-group">
+            <label>Email Address</label>
+            <input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email" />
+          </div>
+          <div class="field-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="Your password" autocomplete="current-password" />
+          </div>
+          <button class="btn btn-primary btn-wide" onclick="login()">Sign In to AgriGuide →</button>
+          <p class="auth-switch">Don't have an account? <a onclick="switchAuthTab('signup')">Create one free</a></p>
+        </div>
+
+        <!-- Signup form -->
+        <div id="formSignup" class="hidden">
+          <button class="btn btn-google btn-wide" onclick="googleLogin()">
+            <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 01-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z"/></svg>
+            Sign Up with Google
+          </button>
+          <div class="auth-divider"><span>or</span></div>
+          <div class="field-group">
+            <label>Full Name</label>
+            <input type="text" id="signupName" placeholder="Your full name" autocomplete="name" />
+          </div>
+          <div class="field-group">
+            <label>Email Address</label>
+            <input type="email" id="signupEmail" placeholder="you@example.com" autocomplete="email" />
+          </div>
+          <div class="field-group">
+            <label>Password</label>
+            <input type="password" id="signupPassword" placeholder="Min. 6 characters" autocomplete="new-password" />
+          </div>
+          <button class="btn btn-primary btn-wide" onclick="signup()">Create Free Account →</button>
+          <p class="auth-switch">Already have an account? <a onclick="switchAuthTab('login')">Sign in</a></p>
+        </div>
+
+        <p class="auth-terms">By continuing you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MAIN APP (Dashboard + all pages)
+══════════════════════════════════════════ -->
+<div id="appShell" class="hidden">
+
+  <!-- Top Bar -->
+  <header class="app-bar">
+    <div class="bar-brand" onclick="navigateTo('dashboard')" style="cursor:pointer;">
+      <div class="bar-logo">🌾</div>
+      <span class="bar-title">AgriGuide Pro</span>
+    </div>
+    <div class="bar-controls">
+      <select id="languageSelect" class="lang-select" onchange="changeLanguage()" aria-label="Language">
+        <option value="en">🌐 EN</option>
+        <option value="hi">हिंदी</option>
+        <option value="mr">मराठी</option>
+        <option value="gu">ગુજ</option>
+        <option value="pa">ਪੰਜ</option>
+      </select>
+      <button class="btn btn-icon" onclick="toggleTheme()" id="themeBtn" title="Toggle theme" aria-label="Toggle dark mode">🌙</button>
+      <div class="user-chip" onclick="toggleUserMenu()" id="userChip">
+        <img id="navUserPhoto" src="https://api.dicebear.com/7.x/initials/svg?seed=User&backgroundColor=1A3325&textColor=ffffff" alt="User" />
+        <span id="navUserName">User</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="user-menu hidden" id="userMenu">
+        <div class="user-menu-header">
+          <strong id="menuUserName">User</strong>
+          <span id="menuUserEmail">user@email.com</span>
+        </div>
+        <button onclick="navigateTo('dashboard');closeUserMenu()">🏠 Dashboard</button>
+        <button onclick="toggleTheme();closeUserMenu()">🌙 Toggle Theme</button>
+        <button onclick="logoutUser()" class="danger">🚪 Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── DASHBOARD ── -->
+  <div id="pg-dashboard" class="app-page">
+    <div class="dashboard-wrap">
+
+      <section class="hero-banner">
+        <img id="userPhoto" class="hero-avatar" src="https://api.dicebear.com/7.x/initials/svg?seed=User&backgroundColor=1A3325&textColor=ffffff" alt="Profile" />
+        <div class="hero-meta">
+          <h2 id="welcomeText">Welcome back, Farmer</h2>
+          <p id="userEmailDisplay">user@email.com</p>
+        </div>
+        <span class="hero-badge">✦ Free Forever</span>
+      </section>
+
+      <p class="section-label" id="menuLabel">Quick Actions</p>
+      <div class="feature-grid">
+        <div class="feat-card" onclick="navigateTo('scan')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navigateTo('scan')">
+          <span class="feat-icon">📸</span>
+          <h3 id="menuScanText">Scan Crop</h3>
+          <p>Diagnose diseases instantly</p>
+        </div>
+        <div class="feat-card" onclick="navigateTo('crops')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navigateTo('crops')">
+          <span class="feat-icon">🚜</span>
+          <h3 id="menuCropsText">My Crops</h3>
+          <p>Manage your crop registry</p>
+        </div>
+        <div class="feat-card" onclick="navigateTo('history')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navigateTo('history')">
+          <span class="feat-icon">📋</span>
+          <h3 id="menuHistoryText">Scan History</h3>
+          <p>View past diagnoses</p>
+        </div>
+        <div class="feat-card" onclick="navigateTo('market')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navigateTo('market')">
+          <span class="feat-icon">📊</span>
+          <h3 id="menuMarketText">Market Mandi</h3>
+          <p>Live APMC prices</p>
+        </div>
+        <div class="feat-card" onclick="navigateTo('weather')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navigateTo('weather')">
+          <span class="feat-icon">🌦</span>
+          <h3 id="menuWeatherText">AI Weather</h3>
+          <p>Farm-specific forecasts</p>
+        </div>
+      </div>
+
+      <!-- Chatbot -->
+      <div class="chatbot-wrap">
+        <div class="chatbot-head">
+          <div class="chatbot-head-icon">🤖</div>
+          <div class="chatbot-head-text">
+            <h3 id="botTitle">AgriGuide AI Assistant</h3>
+            <p id="botSubtitle">Ask about pests, soil, crop rotation, pricing & more</p>
+          </div>
+          <button class="btn btn-icon-sm" onclick="clearChat()" title="Clear chat" aria-label="Clear chat history">🗑</button>
+        </div>
+        <div id="chatBox" class="chat-messages" role="region" aria-live="polite">
+          <div class="chat-msg bot-msg">
+            <div class="chat-avatar">🤖</div>
+            <div class="chat-bubble">
+              Namaste! 🌾 I'm your AgriGuide AI assistant. I can help you with:
+              <ul style="margin-top:8px;padding-left:18px;font-size:0.85rem;">
+                <li>Crop disease diagnosis & treatment</li>
+                <li>Soil health & fertilizer advice</li>
+                <li>Irrigation & weather guidance</li>
+                <li>Market prices & when to sell</li>
+              </ul>
+              Ask me anything!
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-bar">
+          <input type="text" id="userInput" placeholder="Ask a farming question…" onkeydown="if(event.key==='Enter')sendMessage()" />
+          <button class="btn btn-icon-sm" onclick="startVoiceInput()" title="Voice input" aria-label="Voice input">🎤</button>
+          <button class="btn btn-primary btn-sm" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SCAN PAGE ── -->
+  <div id="pg-scan" class="app-page hidden">
+    <div class="page-view">
+      <div class="page-header">
+        <button class="back-btn" onclick="navigateTo('dashboard')">←</button>
+        <div class="page-icon-wrap">📸</div>
+        <div>
+          <h2>Crop Disease Scanner</h2>
+          <p>AI-powered plant pathology diagnosis</p>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="upload-zone" id="uploadZone" onclick="document.getElementById('scanImage').click()">
+          <input type="file" id="scanImage" accept="image/*" onchange="previewImage(event)" style="display:none;" aria-label="Upload crop image" />
+          <div class="upload-icon-wrap">📷</div>
+          <p class="upload-title">Drop your crop photo here</p>
+          <p class="upload-sub">or click to browse · PNG, JPG, WEBP</p>
+        </div>
+        <div id="imagePreviewContainer"></div>
+        <div class="panel-footer">
+          <button class="btn btn-primary" onclick="scanCrop()">🔬 Analyze with AI</button>
+          <button class="btn btn-outline" onclick="navigateTo('dashboard')">← Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RESULT PAGE ── -->
+  <div id="pg-result" class="app-page hidden">
+    <div class="page-view">
+      <div class="page-header">
+        <button class="back-btn" onclick="navigateTo('dashboard')">←</button>
+        <div class="page-icon-wrap">🌱</div>
+        <div>
+          <h2>Diagnostic Results</h2>
+          <p>AI crop analysis report</p>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div id="loadingScreen" class="loading-state hidden">
+          <div class="spinner"></div>
+          <span>Analyzing crop image with AI…</span>
+        </div>
+        <div id="scanResult" class="result-box hidden"></div>
+        <div class="panel-footer">
+          <button class="btn btn-primary" onclick="navigateTo('scan')">🔬 Scan Another</button>
+          <button class="btn btn-outline" onclick="navigateTo('dashboard')">🏠 Dashboard</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MY CROPS PAGE ── -->
+  <div id="pg-crops" class="app-page hidden">
+    <div class="page-view">
+      <div class="page-header">
+        <button class="back-btn" onclick="navigateTo('dashboard')">←</button>
+        <div class="page-icon-wrap">🚜</div>
+        <div>
+          <h2>My Crops Registry</h2>
+          <p>Track your crops and pricing</p>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="two-col-form">
+          <div class="field-group">
+            <label>Crop Name</label>
+            <input type="text" id="cropName" placeholder="e.g., Rice, Wheat, Onion" />
+          </div>
+          <div class="field-group">
+            <label>Wholesale Price (₹/qtl)</label>
+            <input type="number" id="cropPrice" placeholder="e.g., 2340" />
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="addCrop()" style="margin-top:14px;">＋ Add to Registry</button>
+        <div id="cropList" class="crop-list"></div>
+        <div class="panel-footer">
+          <button class="btn btn-outline" onclick="navigateTo('dashboard')">← Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MARKET PAGE ── -->
+  <div id="pg-market" class="app-page hidden">
+    <div class="page-view">
+      <div class="page-header">
+        <button class="back-btn" onclick="navigateTo('dashboard')">←</button>
+        <div class="page-icon-wrap">📊</div>
+        <div>
+          <h2>Market Mandi Prices</h2>
+          <p>Real-time APMC wholesale rates</p>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div id="marketList" role="region" aria-live="polite"></div>
+        <div class="panel-footer">
+          <button class="btn btn-outline" onclick="navigateTo('dashboard')">← Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WEATHER PAGE ── -->
+  <div id="pg-weather" class="app-page hidden">
+    <div class="page-view">
+      <div class="page-header">
+        <button class="back-btn" onclick="navigateTo('dashboard')">←</button>
+        <div class="page-icon-wrap">🌦</div>
+        <div>
+          <h2>Agricultural Weather AI</h2>
+          <p>Farm-specific climate insights</p>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="search-row">
+          <input type="text" id="cityInput" placeholder="Enter your city name…" onkeydown="if(event.key==='Enter')showWeather()" />
+          <button class="btn btn-primary" onclick="showWeather()">Get Forecast</button>
+        </div>
+        <div id="weatherResult" role="region" aria-live="polite"></div>
+        <div class="panel-footer">
+          <button class="btn btn-outline" onclick="navigateTo('dashboard')">← Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HISTORY PAGE ── -->
+  <div id="pg-history" class="app-page hidden">
+    <div class="page-view">
+      <div class="page-header">
+        <button class="back-btn" onclick="navigateTo('dashboard')">←</button>
+        <div class="page-icon-wrap">📋</div>
+        <div>
+          <h2>Scan History</h2>
+          <p>Your crop diagnosis archive</p>
+        </div>
+        <button class="btn btn-danger btn-sm" style="margin-left:auto;" onclick="clearAllScanHistory()">🗑 Clear All</button>
+      </div>
+      <div class="panel-card">
+        <div id="historyList" role="region"></div>
+        <div class="panel-footer">
+          <button class="btn btn-outline" onclick="navigateTo('dashboard')">← Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end #appShell -->
+
+<!-- Toast notification -->
+<div id="toast" role="status" aria-live="assertive"></div>
+
+<!-- Main app logic -->
+<script src="script.js"></script>
+</body>
+</html>

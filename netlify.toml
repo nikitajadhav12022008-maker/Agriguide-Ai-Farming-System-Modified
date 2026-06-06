@@ -1,0 +1,59 @@
+# ════════════════════════════════════════════════════════════
+#  AgriGuide Pro — netlify.toml
+#  Netlify deployment configuration
+#
+#  Deploy steps:
+#  1. Push this repo to GitHub
+#  2. Go to https://app.netlify.com → "Add new site" → "Import from Git"
+#  3. Select your GitHub repo
+#  4. Netlify auto-detects this file — click Deploy!
+#  5. Your site is live at https://your-site.netlify.app
+# ════════════════════════════════════════════════════════════
+
+[build]
+  # Root of the project to publish (the folder with index.html)
+  publish = "."
+
+  # No build command needed — this is a static site
+  # If you add a build step (e.g. Vite/Webpack), put it here:
+  # command = "npm run build"
+
+# ── Headers (security + performance) ───────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options          = "DENY"
+    X-XSS-Protection         = "1; mode=block"
+    X-Content-Type-Options   = "nosniff"
+    Referrer-Policy          = "strict-origin-when-cross-origin"
+    Permissions-Policy       = "camera=(), microphone=(self), geolocation=(self)"
+
+# Cache HTML — short (always get fresh)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Cache CSS/JS — long (versioned by content hash)
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── Redirects ───────────────────────────────────────────────
+# Redirect all routes to index.html (SPA behaviour)
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+
+# ── Environment variable reminder ───────────────────────────
+# Go to: Netlify Dashboard → Site settings → Environment variables
+# Add:
+#   ANTHROPIC_API_KEY = your_key_here    ← if using Python backend
+#   (For pure frontend, the key goes in script.js directly)
